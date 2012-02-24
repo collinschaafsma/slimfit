@@ -10,4 +10,4 @@ require 'rack/deflater'
 Dir["./app/models/*.rb"].each       { |f| require f }
 Dir["./app/controllers/*.rb"].each  { |f| require f }
 Dir["./app/interfaces/*.rb"].each   { |f| require f }
-Dir["./app/presenters/*.rb"].each   { |f| require f }
+Dir["./app/presenters/**/*.rb"].each   { |f| require f }

@@ -3,6 +3,7 @@ module Slimfit
     class WelcomeController < ApplicationController
 
       get '/' do
+        @building = Slimfit::Presenters::Welcome::Index.new
         erb :'welcome/index'
       end
 
