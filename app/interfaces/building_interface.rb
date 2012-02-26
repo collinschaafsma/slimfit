@@ -2,8 +2,12 @@ module Slimfit
   module Interfaces
     class BuildingInterface
 
+      def initialize(target = Slimfit::Models::Building)
+        @target = target
+      end
+
       def new_building
-        Slimfit::Models::Building.new
+        @target.new
       end
 
     end

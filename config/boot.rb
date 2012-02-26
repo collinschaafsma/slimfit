@@ -5,6 +5,7 @@ Bundler.setup
 Bundler.require(:default, ENV["RACK_ENV"].to_sym)
 
 require 'json'
+require 'sinatra/activerecord'
 require 'rack/deflater'
 
 Dir["./app/models/*.rb"].each       { |f| require f }

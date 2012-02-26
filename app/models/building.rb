@@ -1,19 +1,7 @@
 module Slimfit
   module Models
-    class Building
+    class Building < ActiveRecord::Base
 
-      def initialize
-        @name = "Quick Left Office"
-        @location = "902 Pearl St."
-      end
-
-      def name
-        @name
-      end
-
-      def location
-        @location
-      end
     end
   end
 end
