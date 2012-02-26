@@ -7,7 +7,6 @@ class CreateBuildings < ActiveRecord::Migration
       t.string :state
       t.string :type
       t.integer :year_built
-      t.integer :square_feet
 
       t.timestamps
     end
