@@ -6,6 +6,10 @@ module Slimfit
         @target = target
       end
 
+      def all
+        @target.all
+      end
+
       def new_building
         @target.new
       end
