@@ -1,18 +1,4 @@
-# Throw away class to act like an ActiveRecord::Base class
-Target = Class.new do
-  def self.create!(options);end
-  def self.create(options);end
-  def self.find(id)
-    self
-  end
-  def self.all(*args)
-    []
-  end
-  def destroy;end
-  def update_attributes(options = {});end
-end
-
-class Building < Factory
+class Building < InactiveRecord
   def initialize(options = {})
     defaults = {
       id:           1,
@@ -22,13 +8,13 @@ class Building < Factory
       state:        "CO",
       type:         "Skyscrapper",
       year_built:   2012,
-      floors:       Factory.build_multi(Floor,3)
+      floors:       InactiveRecord.build_multi(Floor,3)
     }
     build(defaults.merge(options))
   end
 end
 
-class Floor < Factory
+class Floor < InactiveRecord
   def initialize(options = {})
     defaults = {
       id: 1,

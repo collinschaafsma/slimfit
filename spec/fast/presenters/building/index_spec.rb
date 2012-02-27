@@ -5,7 +5,7 @@ require './app/presenters/buildings/index'
 
 describe Slimfit::Presenters::Building::Index do
   subject do
-    interface = Slimfit::Interfaces::BuildingInterface.new(Target)
+    interface = Slimfit::Interfaces::BuildingInterface.new(Building)
     Slimfit::Presenters::Building::Index.new(interface)
   end
 

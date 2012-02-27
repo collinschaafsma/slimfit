@@ -1,10 +1,9 @@
 require './spec/fast/spec_helper'
-require 'active_record'
 require './app/interfaces/building_interface'
 require './app/models/building'
 
 describe Slimfit::Interfaces::BuildingInterface do
-  subject { Slimfit::Interfaces::BuildingInterface.new(Target) }
+  subject { Slimfit::Interfaces::BuildingInterface.new(Building) }
 
   it "should default the target to the building model" do
     interface = Slimfit::Interfaces::BuildingInterface.new
@@ -108,7 +107,7 @@ describe Slimfit::Interfaces::BuildingInterface do
 
   describe "#new_building" do
     it "should return a instance of the target" do
-      subject.new_building.instance_of?(Target).should == true
+      subject.new_building.instance_of?(Building).should == true
     end
   end
 
