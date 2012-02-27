@@ -38,6 +38,10 @@ module Slimfit
         @target.new(options)
       end
 
+      def featured_building
+        @target.all(:conditions => {:featured => true}, :limit => 1)
+      end
+
     end
   end
 end

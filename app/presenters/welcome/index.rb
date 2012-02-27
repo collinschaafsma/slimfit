@@ -3,12 +3,14 @@ module Slimfit
     module Welcome
       class Index < Slimfit::Presenters::ApplicationPresenter
 
-        def building
-          Slimfit::Interfaces::BuildingInterface.new.new_building
+        attr_reader :building_interface
+
+        def initialize(building_interface = Slimfit::Interfaces::BuildingInterface.new)
+          @building_interface = building_interface
         end
 
-        def building_name
-          building.name
+        def featured_building
+          @building_interface.featured_building
         end
 
       end

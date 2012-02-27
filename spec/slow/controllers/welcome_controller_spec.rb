@@ -1,12 +1,9 @@
 require './spec/slow/spec_helper'
 
-describe Slimfit::Controllers::WelcomeController do
-  def app
-    @app ||= Slimfit::Controllers::WelcomeController
-  end
+describe Slimfit::Controllers::WelcomeController, :type => :request do
 
-  it "says hello" do
-    get '/'
-    last_response.should be_ok
+  it "index should be successful" do
+    visit '/'
+    page.status_code.should == 200
   end
 end

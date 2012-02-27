@@ -3,17 +3,6 @@ require 'active_record'
 require './app/interfaces/building_interface'
 require './app/models/building'
 
-Target = Class.new do
-  def self.create!(options);end
-  def self.create(options);end
-  def self.find(id)
-    self
-  end
-  def self.all;end
-  def destroy;end
-  def update_attributes(options = {});end
-end
-
 describe Slimfit::Interfaces::BuildingInterface do
   subject { Slimfit::Interfaces::BuildingInterface.new(Target) }
 
@@ -54,6 +43,10 @@ describe Slimfit::Interfaces::BuildingInterface do
 
   it "should have a #all method" do
     subject.respond_to?(:all).should == true
+  end
+
+  it "should have a #featured_building method" do
+    subject.respond_to?(:featured_building).should == true
   end
 
   describe "#build!" do
@@ -116,6 +109,13 @@ describe Slimfit::Interfaces::BuildingInterface do
   describe "#new_building" do
     it "should return a instance of the target" do
       subject.new_building.instance_of?(Target).should == true
+    end
+  end
+
+  describe "#featured_building" do
+    it "should call #featured_building on the target" do
+      subject.target.should_receive(:all)
+      subject.featured_building
     end
   end
 

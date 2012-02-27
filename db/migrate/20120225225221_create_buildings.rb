@@ -7,6 +7,7 @@ class CreateBuildings < ActiveRecord::Migration
       t.string :state
       t.string :type
       t.integer :year_built
+      t.boolean :featured, :default => false
 
       t.timestamps
     end

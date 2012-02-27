@@ -23,7 +23,7 @@ end
 group :test do
   gem 'rspec', '~> 2.8.0'
   gem 'capybara'
+  gem 'shoulda-matchers'
   gem 'rack-test', :require => "rack/test"
-  gem 'activerecord-nulldb-adapter'
 end
 
