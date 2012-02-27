@@ -3,19 +3,19 @@ require 'sinatra/activerecord/rake'
 begin
   require "rspec/core/rake_task"
   desc "Run specs"
+  task :spec_fast do
+    RSpec::Core::RakeTask.new(:spec_fast) do |t|
+      t.pattern = './spec/fast/**/*_spec.rb'
+    end
+  end
+  task :spec_slow do
+    RSpec::Core::RakeTask.new(:spec_slow) do |t|
+      t.pattern = './spec/slow/**/*_spec.rb'
+    end
+  end
   task :spec do
     RSpec::Core::RakeTask.new(:spec) do |t|
       t.pattern = './spec/**/*_spec.rb'
-    end
-  end
-  task :integration do
-    RSpec::Core::RakeTask.new(:integration) do |t|
-      t.pattern = './spec_integration/**/*_spec.rb'
-    end
-  end
-  task :tests do
-    RSpec::Core::RakeTask.new(:tests) do |t|
-      t.pattern = './spec*/**/*_spec.rb'
     end
   end
 rescue LoadError

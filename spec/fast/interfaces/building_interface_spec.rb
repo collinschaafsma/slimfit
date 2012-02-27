@@ -1,3 +1,4 @@
+require './spec/fast/spec_helper'
 require 'active_record'
 require './app/interfaces/building_interface'
 require './app/models/building'

@@ -1,4 +1,4 @@
-require './spec_integration/spec_helper'
+require './spec/slow/spec_helper'
 
 describe Slimfit::Controllers::WelcomeController do
   def app
